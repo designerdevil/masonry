@@ -29,7 +29,6 @@
 
 	.item {
 
-		&.w1,
 		&.w2,
 		&.w3,
 		&.w4,
@@ -37,7 +36,6 @@
 			grid-column: span 1;
 		}
 
-		&.h1,
 		&.h2,
 		&.h3,
 		&.h4,
@@ -48,6 +46,7 @@
 }
 
 @media only screen and (min-width: 769px) {
+	// This breakpoint will support 2 columns
 	.masonry {
 
 		// Converting columns to 2 max for tablet (if more than 2 is provided)
@@ -60,6 +59,7 @@
 		.item {
 
 			// Converting max cols span to 2 (if more than 2 is provided)
+			&.w2,
 			&.w3,
 			&.w4,
 			&.w5 {
@@ -67,10 +67,12 @@
 			}
 
 			// Converting max rows span to 2 (if more than 2 is provided)
+			&.h2,
 			&.h3,
 			&.h4,
 			&.h5 {
 				grid-row: span 2;
+				grid-column: span 2;
 			}
 		}
 	}
@@ -99,6 +101,9 @@
 		}
 
 		.item {
+			&.h2,&.h3,&.h4,&.h5 {
+				grid-column: unset;
+			}
 			&.w1 {
 				grid-column: span 1;
 			}

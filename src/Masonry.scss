@@ -1,15 +1,22 @@
 @import url(./MasonryHelper.scss);
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .masonry {
   display: grid;
   max-width: 100%;
-// light
-// dark
-// card
-// clickable card
-// image
-// image-background + content
-// clickable
+
+  .image-holder {
+    animation: fadeIn 0.5s;
+  }
 
   &.light .item {
     background: teal;
@@ -21,63 +28,72 @@
     color: teal;
   }
 
-  &.imageonly .item {
-    .image-holder {
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-    }
-    .content-holder, .action-holder {
-      display: none;
-    }
-  }
-
-  &.card .item {
-    .image-holder {
-      height: 200px;
-      overflow: hidden;
-    }
-    .content-holder {
-      padding: 20px 30px;
-    }
-    .action-holder {
-      padding: 0 30px 30px;
-    }
-  }
-
-  &.imagebg .item {
-    .image-holder {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      z-index: 1;
-      background: #000;
-      img {
-        opacity: 0.7;
+  &.imageonly {
+    .item {
+      .image-holder {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+  
+      .content-holder {
+        display: none;
       }
     }
-    .content-holder {
-      padding: 0;
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      min-height: 200px;
-      height: 100%;
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      p { padding: 0 30px; }
+    &:not(.clickable) {
+      .action-holder {
+        display: none;
+      }
     }
-    .action-holder a {
-      position: absolute;
-      z-index: 3;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      text-indent: -9999px;
-    }
+  }
 
+  &.card {
+    .item {
+      .image-holder {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .content-holder {
+        padding: 20px 30px;
+      }
+
+      .action-holder {
+        padding: 0 30px 30px;
+      }
+    }
+  }
+
+  &.imagebg {
+    .item {
+      .image-holder {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        background: rgb(2, 57, 37);
+
+        img {
+          opacity: 0.3;
+        }
+      }
+
+      .content-holder {
+        padding: 0;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        min-height: 200px;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+        p {
+          padding: 0 30px;
+        }
+      }
+    }
   }
 
   img {
@@ -91,22 +107,45 @@
     background: white;
   }
 
-	&.rounded {
-		.item {
-			border-radius: 5px;
-			overflow: hidden;
-		}
+  &.rounded {
+    .item {
+      border-radius: 5px;
+      overflow: hidden;
+    }
 
-		&-rounded1 .item {
-			border-radius: 10px;
-		}
+    &-rounded1 .item {
+      border-radius: 10px;
+    }
 
-		&-rounded2 .item {
-			border-radius: 15px;
-		}
+    &-rounded2 .item {
+      border-radius: 15px;
+    }
 
-		&-rounded3 .item {
-			border-radius: 20px;
-		}
-	}
+    &-rounded3 .item {
+      border-radius: 20px;
+    }
+  }
+
+  // making action holder as clickable
+  &.clickable {
+    .item {
+      .action-holder a {
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        text-indent: -9999px;
+      }
+    }
+  }
+  &:not(.clickable) {
+    .action-holder {
+      position: relative;
+      z-index: 3;
+      transform: translateY(-100%);
+    }
+  }
+
 }
