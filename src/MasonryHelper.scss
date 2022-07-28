@@ -1,0 +1,140 @@
+.masonry {
+    &.gap1 {
+        gap: 5px;
+    }
+
+    &.gap2 {
+        gap: 10px;
+    }
+
+    &.gap3 {
+        gap: 15px;
+    }
+
+    &.gap4 {
+        gap: 20px;
+    }
+
+    &.gap5 {
+        gap: 25px;
+    }
+
+    &.col1,
+    &.col2,
+    &.col3,
+    &.col4,
+    &.col5 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .item {
+        &.w1,
+        &.w2,
+        &.w3,
+        &.w4,
+        &.w5 {
+            grid-column: span 1;
+        }
+
+        &.h1,
+        &.h2,
+        &.h3,
+        &.h4,
+        &.h5 {
+            grid-row: span 1;
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .masonry {
+        // Converting columns to 2 max for tablet (if more than 2 is provided)
+        &.col3,
+        &.col4,
+        &.col5 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        .item {
+            // Converting max cols span to 2 (if more than 2 is provided)
+            &.w3,
+            &.w4,
+            &.w5 {
+                grid-column: span 2;
+            }
+
+            // Converting max rows span to 2 (if more than 2 is provided)
+            &.h3,
+            &.h4,
+            &.h5 {
+                grid-row: span 2;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .masonry {
+        &.col1 {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &.col2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &.col3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &.col4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        &.col5 {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .item {
+            &.w1 {
+                grid-column: span 1;
+            }
+
+            &.w2 {
+                grid-column: span 2;
+            }
+
+            &.w3 {
+                grid-column: span 3;
+            }
+
+            &.w4 {
+                grid-column: span 4;
+            }
+
+            &.w5 {
+                grid-column: span 5;
+            }
+
+            &.h1 {
+                grid-row: span 1;
+            }
+
+            &.h2 {
+                grid-row: span 2;
+            }
+
+            &.h3 {
+                grid-row: span 3;
+            }
+
+            &.h4 {
+                grid-row: span 4;
+            }
+
+            &.h5 {
+                grid-row: span 5;
+            }
+        }
+    }
+}
