@@ -1,4 +1,30 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    padding: 20px 0 0;
+    text-align: center;
+}
+
+p {margin: 0; padding: 0;}
+
+.App {
+    width: 80vw;
+    margin: 0 auto 50px;
+
+}
+
+.item-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    z-index: 9;
 }
