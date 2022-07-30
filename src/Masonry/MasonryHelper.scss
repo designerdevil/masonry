@@ -1,4 +1,7 @@
 .masonry {
+	display: grid;
+	max-width: 100%;
+	justify-content: center;
 	&.gap1 {
 		gap: 5px;
 	}
@@ -42,6 +45,10 @@
 		&.h5 {
 			grid-row: span 1;
 		}
+
+		&.focused {
+			order: -1;
+		}
 	}
 }
 
@@ -64,6 +71,7 @@
 			&.w4,
 			&.w5 {
 				grid-column: span 2;
+				order: -1;
 			}
 
 			// Converting max rows span to 2 (if more than 2 is provided)
@@ -73,6 +81,7 @@
 			&.h5 {
 				grid-row: span 2;
 				grid-column: span 2;
+				order: -1;
 			}
 		}
 	}
@@ -142,6 +151,14 @@
 
 			&.h5 {
 				grid-row: span 5;
+			}
+			&.w2, &.w3, &.w4, &.w5,
+			&.h2, &.h3, &.h4, &.h5 {
+				order: unset;
+			}
+
+			&.focused {
+				order: unset;
 			}
 		}
 	}

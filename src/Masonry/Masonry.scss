@@ -11,9 +11,6 @@
 }
 
 .masonry {
-  display: grid;
-  max-width: 100%;
-
   .image-holder {
     animation: fadeIn 0.5s;
   }
@@ -105,24 +102,28 @@
   .item {
     position: relative;
     background: white;
+    overflow: hidden;
   }
 
   &.rounded {
-    .item {
-      border-radius: 5px;
-      overflow: hidden;
+    &-1 .item {
+      border-radius: 4px;
     }
 
-    &-rounded1 .item {
-      border-radius: 10px;
+    &-2 .item {
+      border-radius: 8px;
     }
 
-    &-rounded2 .item {
-      border-radius: 15px;
+    &-3 .item {
+      border-radius: 16px;
     }
 
-    &-rounded3 .item {
+    &-4 .item {
       border-radius: 20px;
+    }
+
+    &-5 .item {
+      border-radius: 32px;
     }
   }
 
@@ -140,7 +141,7 @@
       }
     }
   }
-  &:not(.clickable) {
+  &:not(.clickable):not(.card) {
     .action-holder {
       position: relative;
       z-index: 3;
