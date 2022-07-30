@@ -1,26 +1,38 @@
 # Masonry Gallery
 Masonry gallery with CSS grid system to support 5 tiles in a row. Responsive support for **Desktop/ Tablet / Mobile**
 
-### Choose columns
+----
+## How to Run?
+
+```
+npm install
+npm start
+```
+
+--------
+## Attributes of Masonry
+
+
+### Columns
 This gallery supports 5 tiles max for desktop. On tablet the tiles will gracefully be adjusted in 2 column Grids. On mobile the tiles will be stacked below each other
 **Options**: col1, col2, col3, col4, col5
 
-### Choose Rounded
+### Rounded
 To choose if the tiles needs to be with rounded corners or sharp corners
 - rounded-1, rounded-2, rounded-3, rounded-4
 
-### Choose Gap
+### Gap
 To choose gap between tiles
 **Options**: gap1, gap2, gap3, gap4, gap5
 
-### Choose Type of Gallery
+### Type of Gallery
 Support for different variations for the type of gallery
 - Image Only
 - Content with Image Bg
 - Card
 - Only content (New!)
 
-### Are tiles Clickable?
+### Clickable Tiles
 For enabling if the tiles can be clickable itself or through the link if configured
 
 ### Tile Items
