@@ -57,6 +57,7 @@
 	.masonry {
 
 		// Converting columns to 2 max for tablet (if more than 2 is provided)
+		&.col2,
 		&.col3,
 		&.col4,
 		&.col5 {
@@ -64,24 +65,36 @@
 		}
 
 		.item {
+			
+			&.w1 {
+				grid-column: span 1;
+			}
+
+			&.w2 {
+				grid-column: span 2;
+			}
+
+			&.h1 {
+				grid-row: span 1;
+			}
+
+			&.h2 {
+				grid-row: span 2;
+			}
 
 			// Converting max cols span to 2 (if more than 2 is provided)
-			&.w2,
 			&.w3,
 			&.w4,
 			&.w5 {
 				grid-column: span 2;
-				order: -1;
 			}
 
 			// Converting max rows span to 2 (if more than 2 is provided)
-			&.h2,
 			&.h3,
 			&.h4,
 			&.h5 {
 				grid-row: span 2;
 				grid-column: span 2;
-				order: -1;
 			}
 		}
 	}
@@ -110,17 +123,6 @@
 		}
 
 		.item {
-			&.h2,&.h3,&.h4,&.h5 {
-				grid-column: unset;
-			}
-			&.w1 {
-				grid-column: span 1;
-			}
-
-			&.w2 {
-				grid-column: span 2;
-			}
-
 			&.w3 {
 				grid-column: span 3;
 			}
@@ -133,14 +135,6 @@
 				grid-column: span 5;
 			}
 
-			&.h1 {
-				grid-row: span 1;
-			}
-
-			&.h2 {
-				grid-row: span 2;
-			}
-
 			&.h3 {
 				grid-row: span 3;
 			}
@@ -151,10 +145,6 @@
 
 			&.h5 {
 				grid-row: span 5;
-			}
-			&.w2, &.w3, &.w4, &.w5,
-			&.h2, &.h3, &.h4, &.h5 {
-				order: unset;
 			}
 
 			&.focused {

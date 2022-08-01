@@ -1,6 +1,6 @@
 
 function ConfigForm({ masonryState, setMasonryState }) {
-    let itemValues = { itemWidth: '', itemHeight: '', itemImage: 'image1', itemFocus: '' };
+    let itemValues = { itemWidth: 'w1', itemHeight: 'h1', itemImage: 'image1', itemFocus: '' };
     const handleOnChange = (e) => {
         setMasonryState({
             ...masonryState,
@@ -22,6 +22,7 @@ function ConfigForm({ masonryState, setMasonryState }) {
         document.getElementById("itemWidth").selectedIndex = 0;
         document.getElementById("itemHeight").selectedIndex = 0;
         document.getElementById("itemFocus").selectedIndex = 0;
+        itemValues = { itemWidth: 'w1', itemHeight: 'h1', itemImage: 'image1', itemFocus: '' };
     };
     const handleRemoveItem = (val) => {
         setMasonryState({
